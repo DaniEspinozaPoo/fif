@@ -1,0 +1,95 @@
+// estilos maqueta
+
+body{
+    background-color: #E6E7E8 !important;
+}
+
+.titulo{
+    margin-bottom: 80px;
+    background-color: white;
+    padding: 32px;
+    img{
+        height: 60px !important;
+      
+    } 
+    h1{
+    font-size: 20px !important;
+   
+    color: #555; 
+}  
+}
+
+
+
+
+
+.container-fluid{
+    max-width: 1024px;
+}
+
+.tab-content{
+    background-color: white;
+    padding: 24px; 
+}
+
+.datos th{
+    text-align: center;
+
+}
+
+.tab{
+    color:#2FC46D;
+}
+
+.gris {
+	background-color: $boton-gris!important;
+	border-color: $boton-gris!important;
+    width: 100%;
+}
+
+.ancho {
+    width: 100%;
+    margin-bottom: 30%!important;
+}
+
+.nombrecliente{
+    margin-top: 10%;
+}
+
+.box {
+    background-color: #DCDFE0;
+    padding: 30%;
+    text-align: center;
+    .nube{
+        font-size: 80px;
+        margin-left: 1%;
+        display: block;
+    }
+}
+
+label{
+    display: block!important;
+    text-align: left;
+}
+
+.subir{
+    max-width: 140px;
+    display: inline!important;
+}
+
+.table-fixed{
+
+}
+
+
+@media (max-width: 480px){
+
+.titulo{
+    text-align: center;
+}
+
+.grupo{
+    width: 100%;
+}
+
+}

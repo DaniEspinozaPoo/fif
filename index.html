@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FIF</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
+    <!--Mezclar con sass-->
+    <link rel="stylesheet" type="text/css" href="dist/css/lector.css">
+    <!---->
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/style.min.css">
+</head>
+<body>
+    <header class="titulo">
+        <div class="container-fluid">
+            <img src="img/DigitalFactory.png">
+            <h1>Validación Cliente</h1>
+        </div>
+    </header>
+    <section class="box-grey">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <ul class="nav nav-tabs">
+                        <li class="nav active"><a href="#ingreso" data-toggle="tab">Ingreso de clientes</a></li>
+                        <li class="nav pestana"><a href="#consulta" data-toggle="tab">Consulta de clientes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="ingreso">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-7">    
+                            <div class="box">
+                                <i class="fa fa-cloud-upload fa-5x nube" id="qrimg" onclick="setimg()" aria-hidden="true"></i>
+                                <input type="file" class="subir" onchange="handleFiles(this.files)"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-5">
+                           <form>
+                            <div class="form-group">
+                                <label for="inputlg" class="nombrecliente">Nombres</label>
+                                <input type="text" id="js-add-input" class="form-control input-lg">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputlg">Apellido paterno</label>
+                                <input type="text" id="js-add-input"  class="form-control input-lg">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputlg">Apellido materno</label>
+                                <input type="text" id="js-add-input"  class="form-control input-lg">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputlg">RUT</label>
+                                <input type="text" id="js-add-input"  class="form-control input-lg rutUser">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputlg">N° de serie</label>
+                                <input type="text" id="js-add-input"  class="form-control input-lg serieUser">
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <button type="submit" class="btn btn-primary btn-lg gris ancho">Limpiar</button>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <button value="Agregar" id="js-add-button" class="btn btn-success btn-lg ancho">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="consulta" ng-app="TablaDemo">
+                <div role="tabpanel" class="tab-pane" id="profile">
+                    <div class="container"  ng-controller="TablaCtrl">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-7">
+                                <div class="linea-caja panel panel-default">
+                                    <div class="panel-body">
+                                        <table class="table table-fixed">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-7">
+                                                    <thead>
+                                                        <tr class="datos ">
+                                                            <th class="">Nombre</th>
+                                                            <th class="">Apellido</th>
+                                                            <th class="">Rut</th>
+                                                            <th class="">Eliminar</th>
+                                                        </tr>
+                                                    </thead>
+                                                </div>
+                                            </div>
+                                            <tbody>
+                                                <tr class="grupo"  ng-repeat="item in lista">
+                                                    <td class="col-xs-2" editable-td row="{{$index}}" field="nombres" >
+                                                        {{item.nombres}}
+                                                    </td>
+                                                    <td class="col-xs-2" editable-td row="{{$index}}" field="apellidos" >
+                                                        {{item.apellidos}}
+                                                    </td>                
+                                                    <td class="col-xs-2" editable-td row="{{$index}}" field="email" >
+                                                        {{item.rut}}
+                                                    </td>
+                                                    <td class="col-xs-2">
+                                                        <span class="glyphicon glyphicon-trash" style="cursor: pointer;" ng-click='eliminar($index)' />
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div id='JSON' /></div>
+                                </div>
+                            </div>              
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+<script type="text/javascript" src="dist/js/script.min.js"></script>
+<canvas id="qr-canvas" width="800" height="600"></canvas>
+<script type="text/javascript">load();</script>
+<script src="https://use.fontawesome.com/e04595ffc3.js"></script>
+<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="node_modules/bootstrap/js/tab.js"></script>
+<script type="text/javascript" src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
